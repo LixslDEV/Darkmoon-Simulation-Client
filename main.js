@@ -3,24 +3,18 @@ const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
 function createWindow () {
-  // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1920,
-    height: 1080,
+    width: 1000,
+    height: 880,
     icon: __dirname + '/misc/logo.png',
+    resizable: false,  // This line disables window resizing
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
-  // and load the index.html of the app.
-  //mainWindow.loadFile("pages\\dashboard\\dashboard.html")
-
   mainWindow.removeMenu()
-  mainWindow.loadURL('https://issue.neuland.software/')
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.loadURL('https://sim.lixsl.net/')
 }
 
 // This method will be called when Electron has finished
