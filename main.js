@@ -15,7 +15,7 @@ function createWindow () {
   })
 
   mainWindow.removeMenu()
-  mainWindow.loadURL('http://localhost:5036/')
+  mainWindow.loadURL('https://darkmoon.lixsl.net')
 
   mainWindow.webContents.on('did-finish-load', () => {
  
