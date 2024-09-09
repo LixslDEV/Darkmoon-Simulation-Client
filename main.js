@@ -4,17 +4,34 @@ const path = require('path')
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 880,
-    icon: __dirname + '/misc/logo.png',
-    resizable: false,  // This line disables window resizing
+    title: "Darkmoon Client",
+    width: 1500,
+    height: 1100,
+    icon: __dirname + '/misc/favicon.png',
+    resizable: true,  // This line disables window resizing
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
   mainWindow.removeMenu()
-  mainWindow.loadURL('https://sim.lixsl.net/')
+  mainWindow.loadURL('http://localhost:5036/')
+
+  mainWindow.webContents.on('did-finish-load', () => {
+ 
+    mainWindow.webContents.insertCSS(`
+        .download-button {
+            visibilty: collapsed !important;
+        }
+    `);
+  })
+
+  // open urls in External Browser
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+    return { action: 'deny' };
+  });
+  
 }
 
 // This method will be called when Electron has finished

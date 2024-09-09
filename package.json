@@ -21,15 +21,15 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "de.lixsl.lxsim",
-    "productName": "LXSIM",
+    "appId": "net.lixsl.darkmoonclient",
+    "productName": "Darkmoon Client",
     "win": {
       "target": ["nsis", "zip"],
-      "icon": "misc/logo.ico"
+      "icon": "misc/favicon.ico"
     },
     "linux": {
       "target": ["AppImage", "deb"],
-      "icon": "misc/logo.ico"
+      "icon": "misc/favicon.ico"
     }
   },  
   "dependencies": {
