@@ -15,7 +15,7 @@ function createWindow () {
   })
 
   mainWindow.removeMenu()
-  mainWindow.loadURL('https://darkmoon.lixsl.net')
+  mainWindow.loadURL('https://darkmoon.gg')
 
   mainWindow.webContents.on('did-finish-load', () => {
  
